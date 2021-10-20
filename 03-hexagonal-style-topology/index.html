@@ -33,51 +33,99 @@
 
 						---
 
-						# Core topology
+						## Core topology
+
+						![Core topology](img/core-topology.png)
 
 						--
 
-						### Domain model
+						*Onion-like internal structure:*<!-- .element: class="pink"-->
+
+						![Onion](img/core-onion.png)
 
 						--
 
-						### Business exceptions
+						## Domain model
+
+						*Major building blocks:*<!-- .element: class="cyan"-->
+
+						* Entities
+						* Aggregates
+						* Domain exceptions
+						* Domain services
 
 						--
 
 						### Use cases and ports
 
+						* Use case as an application service.
+						* Injecting external dependencies via *ports*.<!-- .element: class="pink"-->
+						* Inversion of control.
+						* Complex use cases: *composition* <!-- .element: class="cyan"-->, *extension* <!-- .element: class="cyan"-->, *inheritance*. <!-- .element: class="cyan"-->
+
 						--
 
-						### Inbound ports vs outbound ports
+						### Inbound vs outbound
+
+						* Use case implements an *inbound port*.<!-- .element: class="pink"-->
+						* Use case uses *outbound ports* as injected dependencies.<!-- .element: class="cyan"-->
 
 						---
 
-						# Subdomains
+						## Subdomains
+
+						![Sub domains](img/subdomains.png)
+
+						Decomposition into subdomains improves scalability.<!-- .element: class="cyan"-->
 
 						--
 
-						### Business components
+						## Subdomains vs Business components
+
+						<!-- .slide: class="cyan"-->
+
+						* Subdomain consists of one or more business components.
+						* We rather keep subdomains loosely coupled.
+						* Business components can be coupled more tightly.
 
 						--
 
 						### Integration of subdomains
 
+						<!-- .slide: class="cyan"-->
+
+						* Synchronous via ports.
+						* Asynchronous via ports (message-driven).
+						* Orchestrated from outside (in adapters).
+
 						--
 
-						### Subdomains vs Microservices
+						### Integration of business components
+
+						*Work in Progress*<!-- .element: class="pink"-->
+
+						* Aggregate boundary must fit into BC boundary.
+						* Use case separation.
+						* Use case integration via: composition, extension.
+						* Business transactions.
 
 						---
 
-						# Adapters
+						### Adapters
+
+						![Hexagonal style overview](img/hexagonal-overview.png)
 
 						--
 
 						### Inbound adapters
 
+						![Inbound adapter](img/inbound-adapter.png)
+
 						--
 
 						### Outbound adapters
+
+						![Outbound adapter](img/outbound-adapter.png)
 
 						---
 

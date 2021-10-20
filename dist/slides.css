@@ -177,3 +177,11 @@ section#serverless-pros div {
 /*    font-size: 0.75em;*/
 /*    color: var(--secondary-color);*/
 /*}*/
+
+/* CGA colours */
+.pink {
+    color: #ff00ff;
+}
+.cyan {
+    color: #00ffff;
+}
