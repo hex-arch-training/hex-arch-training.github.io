@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Hexagonal Architecture Training</title>
+		<link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+		<link rel="stylesheet" href="../dist/reset.css">
+		<link rel="stylesheet" href="../dist/reveal.css">
+		<link rel="stylesheet" href="../dist/theme/night.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="../dist/slides.css">
+
+		<script defer src="../dist/fontawesome.js"></script> <!--load all styles -->
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown data-separator="^\n---\n$" data-separator-vertical="^\n--\n$">
+					<script type="text/template">
+						## 06 Adapters
+
+						An adapter is a class that translates (adapts) an interface into another.
+
+						---
+
+						## Inbound adapters
+
+						#### *Primary* <!-- .element: class="pink"--> or *Driving* <!-- .element: class="pink"-->
+
+						![Inbound adapter](img/inbound-adapter.png)
+
+						--
+
+						### Web adapter
+
+						*Work in Progress*<!-- .element: class="pink"-->
+						#### Spring's Web MVC adapter
+						#### Quarkus web adapter
+						#### AWS Lambda web adapter
+
+						---
+
+						## Outbound adapters
+						#### *Secondary* <!-- .element: class="pink"--> or *Driven* <!-- .element: class="pink"-->
+
+						![Outbound adapter](img/outbound-adapter.png)
+
+						--
+
+						### Persistence adapters
+
+						*Work in Progress*<!-- .element: class="pink"-->
+						#### Spring Web adapter
+						#### Quarkus Web adapter
+						#### AWS Lambda Web adapter
+
+						--
+
+						### Transaction adapters
+
+						*Work in Progress*<!-- .element: class="pink"-->
+
+						--
+
+						### Mail adapters
+
+						*Work in Progress*<!-- .element: class="pink"-->
+						#### Spring Email
+						#### Quarkus Email
+						#### Amazon Simple Email
+
+					</script>
+				</section>
+			</div>
+		</div>
+
+		<script src="../dist/reveal.js"></script>
+		<script src="../plugin/notes/notes.js"></script>
+		<script src="../plugin/markdown/markdown.js"></script>
+		<script src="../plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
