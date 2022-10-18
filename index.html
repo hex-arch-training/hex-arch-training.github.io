@@ -16,15 +16,84 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2
-						<aside class="notes">
-						<p>Some notes</p>
-						</aside>
-						<p>Some slide text</p>
-						<aside class="notes">
-						<p>and some more notes</p>
-					</aside>
+				<section data-markdown data-separator-vertical="^--$">
+					<script type="text/template">
+						# Slajd tytułowy
+						---
+						## Why architecture?
+
+						* slides from Marek / Inforshare
+						---
+						## Why hexagonal?
+						---
+						### Our example
+
+						* What does it do
+						--
+						### DDD & Event Storming
+
+						* Subdomains
+						* Bounded contexts
+						---
+						### Hex: elements
+
+						* Adapter
+						* In port
+						* Out port
+						* Driven adapter
+						---
+						### Exercise 1
+						* Checkout branch 00-start (preparation)
+						* First subdomain
+						--
+						Leave:
+
+						* configuration,
+						* preparation,
+						* domain,
+						* out db adapter,
+						* in web adapter
+						--
+						Live coding: `QueryRevision` + tests
+						--
+						Create: `CreateRevisionUseCase` + tests
+
+						* Slide what to do
+						* Self coding
+						---
+						### Mapping methods
+
+						* No Mapping
+						* Two Way
+						* Full Mapping
+						* One Way
+						--
+						### Heuristics
+
+						from Hebrings
+						---
+						### Exercise 2
+
+						Preparation to verification by event
+						--
+						Verification to preparation point 2 point
+						---
+						### Hexagonal architecture in a nutshell
+
+						* Start from hex and then compare with layers
+						* DDD & CQRS (Herberto Graca)
+						* Shallow vs deep systems
+						---
+						### Different architecture style
+
+						Three examples:
+
+						* Everything in one class
+						* Layered approach
+						* Hexagonal approach
+						---
+						# Bibliography
+					</script>
 				</section>
 			</div>
 		</div>
