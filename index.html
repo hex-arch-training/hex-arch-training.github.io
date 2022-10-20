@@ -8,32 +8,53 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+		<link rel="stylesheet" href="dist/theme/night.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
+		<link rel="stylesheet" href="css/custom.css">
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
 				<section data-markdown data-separator-vertical="^--$">
 					<script type="text/template">
-						# Slajd tytułowy
+						# Hexagonal Architecture
+						## in practice<!-- .element class="pink"-->
 						---
 						## Why architecture?
 
+						* Why architecture is important?
 						* slides from Marek / Inforshare
 						---
 						## Why hexagonal?
-						---
-						### Our example
 
-						* What does it do
+						* separation of technical and domain aspects
+						* screaming
+						---
+						## Example:
+						#### Document Management System
+
+						* What does it do (rough domain presentation)
 						--
 						### DDD & Event Storming
 
 						* Subdomains
 						* Bounded contexts
+						--
+						## How hexagonal relates to DDD
+
+						* We have architectures: business, technical, infrastructural
+						* Hexagonal architecture is a kind of technical architecture
+						* DDD is a technique used to reveal and establish business architecture
+						* Technical architecture is derived from business architecture
+						--
+						## Example
+
+						* DDD decomposes domain into subdomain and further into bounded contexts
+						* We use subdomains to identify microservices
+						* We use bounded contexts to identify more microservices and/or modules and components
+						* We model modules/components with hexagonal architecture (technical architecture)
 						---
 						### Hex: elements
 
