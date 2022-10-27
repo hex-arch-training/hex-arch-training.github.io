@@ -4,3 +4,9 @@
 .reveal section .cyan {
     color: #00ffff;
 }
+.reveal section .left-align {
+    text-align: left;
+}
+.reveal section .no-ticks li {
+    list-style-type: none;
+}

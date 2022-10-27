@@ -60,9 +60,12 @@
 
 						![Hexagonal architecture flow](assets/hexagonal-architecture-flow.excalidraw.png)
 						--
+						### <mark>Key advantages</mark> 
+						#### of Hexagonal Architecture
 
-						* separation of technical and domain aspects
-						* screaming
+						* <span class="pink">exposes domain</span> as the most important element
+						* <span class="pink">separates</span> technical and business aspects
+						* <span class="pink">screams out</span> the purpose of the system
 						---
 						## Example:
 						#### Document Management System
@@ -114,12 +117,59 @@
 						* Slide what to do
 						* Self coding
 						---
+						Mapping methods<!-- .element class="r-fit-text"-->
+						--
+						### What is <mark>mapping</mark>?
+
+						> Mapping is a function that transforms data from one data structure to another data structure.
+
+						We use <em>mapping</em> to ensure separation between two layers.
+						--
+						Potential mapping points in Hexagonal Architecture
+
+						![Potential mapping points](assets/hexagonal-architecture-mapping-points.excalidraw.png)
+						--
 						### Mapping methods
 
-						* No Mapping
-						* Two Way
-						* Full Mapping
-						* One Way
+						1. No mapping
+						1. Two way mapping
+						1. Full mapping
+						1. One way mapping
+						--
+						### 1. No mapping<!--.element class="cyan"-->
+
+						No mapping is used - the same structures are used on both sides of the port.
+
+						<ul class="left-align pink no-ticks">
+							<li>&#10004; no hassle to do the mapping</li>
+							<li>&#10004; changes are automatically propagated</li>
+							<li>&#10008; lack of separation - tangling of layers</li>
+						</ul>
+						--
+						### 2. Two way mapping<!-- .element class="cyan"-->
+
+						For each data structure in layer A we use another structure in layer B.
+
+						Structures can be reused between use cases.
+
+						<ul class="left-align pink no-ticks">
+							<li>&#10004; full separation of layers</li>
+							<li>&#10008; structures may be still semantically tangled</li>
+							<li>&#10008; extra cost of implementing mappers</li>
+							<li>&#10004; mapping cost reduced due to reusability</li>
+							<li>&#10008; single change triggers multiple changes in use cases</li>
+						</ul>
+						--
+						### 3. Full mapping<!-- .element class="cyan"-->
+
+						For each usage a separate, dedicated data structure is used.
+
+						<ul class="left-align pink no-ticks">
+							<li>&#10004; full separation of layers</li>
+							<li>&#10004; full separation of use cases</li>
+							<li>&#10004; low risk of semantical tangling</li>
+							<li>&#10008; a lot of mapping code and extra data structures</li>
+						</ul>
 						--
 						### Heuristics
 
@@ -161,7 +211,7 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
+				slideNumber: 'c/t',
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
