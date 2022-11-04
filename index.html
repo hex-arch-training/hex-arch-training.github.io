@@ -173,7 +173,54 @@
 						--
 						### Heuristics
 
-						from Hebrings
+						When to use which mapping method?
+
+						_by Tom Hebrings_
+
+						1. We can use different strategies between inbound and core and between core and outbound.<!-- .element class="cyan"-->
+						2. We can use different strategies for reading and modifying use cases.<!-- .element class="pink"-->
+						--
+						### Heuristic #1
+
+						> When working on <mark>modifying use case</mark>, the "full mapping" (aka command pattern)
+						> is the first choice for <mark>web-core</mark> boundary.
+
+						<ul class="left-align cyan no-ticks">
+							<li>&#10004; clear use case separation</li>
+							<li>&#10004; only needed fields are passed</li>
+						</ul>
+						--
+						### Heuristic #2
+
+						> When working on <mark>modifying use case</mark>, the "no mapping"
+						> is the first choice for <mark>core-db</mark> boundary.
+
+						<ul class="left-align cyan no-ticks">
+							<li>&#10004; quickly evolve code without mapping overhead</li>
+							<li>&#10004; can be turned into "two-way" as soon as persistence details start to leak</li>
+						</ul>
+						--
+						### Heuristic #3
+
+						> When working on <mark>a query</mark>, the "no mapping" is thee first choice
+						> for <mark>web-core</mark> and <mark>core-db</mark> boundaries.
+
+						<ul class="left-align cyan no-ticks">
+							<li>&#10004; quickly evolve code without mapping overhead</li>
+							<li>&#10004; can be turned into "two-way" as soon as persistence details start to leak</li>
+						</ul>
+						--
+						### 4. One-way mapping
+
+						All models in all (or some) layers implement the same interface.
+
+						<ul class="left-align pink no-ticks">
+							<li>&#10004; no additional mappers are needed</li>
+							<li>&#10004; still separation is possible due to non public parts</li>
+							<li>&#10008; tight coupling of data structures</li>
+						</ul>
+
+						Fits well if data structures across layers are similar but "no mapping" is by some reason not suitable.
 						---
 						Mapping examples<!-- .element class="r-fit-text"-->
 						--
