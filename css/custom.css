@@ -10,3 +10,6 @@
 .reveal section .no-ticks li {
     list-style-type: none;
 }
+.reveal section .gap1 {
+    gap: 1em;
+}
