@@ -237,7 +237,11 @@
 						--
 						# YES!
 
-						> <span class="cyan">DevonFW</span> (layered architecture) is an instance of hexagonal architecture, with <span class="pink">preselected</span> mapping methods.
+						> <span class="cyan">DevonFW</span> (layered architecture) is an instance of hexagonal architecture,
+						> with <span class="pink">preselected</span> mapping methods.<sup>*</sup>
+
+						<p><sup>*</sup>well... almost. You need to move entity
+						declaration and repository interfaces from <code>dataaccess</code> to <code>core</code></p><!-- .element: class="fragment"-->
 						--
 						Example for <mark>deep system</mark> using <mark>CQRS</mark> style
 						![CQRS example](assets/mapping-example-cqrs.excalidraw.png)
