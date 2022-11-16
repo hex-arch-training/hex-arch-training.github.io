@@ -13,3 +13,6 @@
 .reveal section .gap1 {
     gap: 1em;
 }
+.reveal section .subtitle {
+    font-size: 1.5rem;
+}
