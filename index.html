@@ -28,10 +28,7 @@
 						* length
 						* lunch break
 						---
-						## Why architecture?
-
-						* Why architecture is important?
-						* slides from Marek / Infoshare
+						Why architecture?<!-- .element: class="r-fit-text"-->
 						--
 						[Design Stamina Hypotesis, M. Fowler](https://martinfowler.com/bliki/DesignStaminaHypothesis.html)
 						![Design stamina](assets/design-stamina.excalidraw.png)
@@ -64,29 +61,36 @@
 
 						![Hexagonal architecture flow](assets/hexagonal-architecture-flow.excalidraw.png)
 						--
-						### <mark>Key advantages</mark> 
+						### <mark>Key advantages</mark>
 						#### of Hexagonal Architecture
 
 						* <span class="pink">exposes domain</span> as the most important element
 						* <span class="pink">separates</span> technical and business aspects
 						* <span class="pink">screams out</span> the purpose of the system
 						---
-						## Training Example:
-						#### Document Management System
+						# Let's code
+						--
+						### Document Management System
 
 						![](assets/domain.png)
 						--
 						### Domain Driven Design
 
-						* Event Storming
+						event storming<!-- .element: class="cyan"-->
+
 						![](assets/domain-ddd.png)
 						--
-						### DDD & Event Storming
+						### Domain Driven Design
 
-						* Bounded Contexts
+						bounded contexts<!-- .element: class="cyan"-->
+
 						![](assets/domain-bounded-context.png)
 						--
+						jeden slajd - dwa zdania o wiązaniu się DDD i Hex
+						--
 						## How hexagonal relates to DDD
+
+						(remove)
 
 						* We have architectures: business, technical, infrastructural
 						* Hexagonal architecture is a kind of technical architecture
@@ -95,36 +99,34 @@
 						--
 						## Example
 
-						* DDD decomposes domain into subdoain and further into bounded contexts
+						* DDD decomposes domain into subdomain and further into bounded contexts
 						* We use subdomains to identify microservices
 						* We use bounded contexts to identify more microservices and/or modules and components
 						* We model modules/components with hexagonal architecture (technical architecture)
 						---
-						### Hex: elements
+						### Live coding 1
 
-						* Adapter
-						* In port
-						* Out port
-						* Driven adapter
+						(wewnętrzne punkty / usunąć lub dać do instrukcji)
+
+						1. Checkout branch 00-start
+						2. Implement `QueryRevisionById*`
+						3. Implement tests
+						--
+						### Summary
+
+						* co zrobiliśmy - porty out/in, adaptery out/in
+						* query model
+						* subdomeny widoczne w kodzie (1szy poziom)
 						---
 						### Exercise 1
-						* Checkout branch 00-start (preparation)
-						* First subdomain
+						Implement `CreateRevisionUseCase` with tests
 						--
-						Leave:
+						### Summary
 
-						* configuration,
-						* preparation,
-						* domain,
-						* out db adapter,
-						* in web adapter
-						--
-						Live coding: `QueryRevision` + tests
-						--
-						Create: `CreateRevisionUseCase` + tests
-
-						* Slide what to do
-						* Self coding
+						1. co zrobiliśmy
+						2. command
+						3. zapis do bazy
+						4. or switch to branch 02 ...
 						---
 						<!-- .slide: id="mapping"-->
 						Mapping methods<!-- .element class="r-fit-text"-->
@@ -258,11 +260,27 @@
 						Example for <mark>event sourcing</mark>
 						![Event sourcing example](assets/mapping-example-event-sourcing.excalidraw.png)
 						---
+						(asynchronous communication intro)
+						---
+						### Live coding 2
+
+						1. Verification domain
+						2. `shared` module
+						<!-- 3. implement `RequestVerification` (async) -->
+						--
+						### Summary
+
+						1. Asynchronous communication
+						---
+						(synchronous communication p2p intro)
+						---
 						### Exercise 2
 
 						Preparation to verification by event
+
+						1. Create `QueryRevisionPreview` (point 2 point)
 						--
-						Verification to preparation point 2 point
+						### Summary
 						---
 						### Hexagonal architecture in a nutshell
 
@@ -284,8 +302,6 @@
 						or how to organize files using subdirectories<!-- .element: class="pink"-->
 
 						<div><s>Robert C. Martin</s> Maciej Małecki</div><!-- .element class="fragment"-->
-						--
-						![Design stamina](assets/design-stamina.excalidraw.png)
 						--
 						> When you look at the top-level directory structure,
 						> and the source files in the highest-level package,
@@ -332,8 +348,6 @@
 						Bury less important parts into subdirectories
 
 						![Sub dirs](assets/screaming-extreme-details.excalidraw.png)
-						---
-						# Bibliography
 					</script>
 				</section>
 			</div>
@@ -349,6 +363,7 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				width: 1200,
 				slideNumber: 'c/t',
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
