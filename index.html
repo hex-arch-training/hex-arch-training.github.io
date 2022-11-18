@@ -148,21 +148,55 @@
 						1. Full mapping
 						1. One way mapping
 						--
-						### 1. No mapping<!--.element class="cyan"-->
+						### 1. No mapping
 
-						No mapping is used - the same structures are used on both sides of the port.
+						![No mapping](assets/mapping-no-mapping.excalidraw.png)
+
+						<p><mark>Example</mark> JPA based db adapter and core share the same model.</p><!-- .element: class="subtitle"-->
+
+						```java[]
+						public void archiveRevision(RevisionId id) {
+							var revision = queryRevisionByIdPort.query(id);
+							revision.archive();
+							saveRevisionPort.save(revision);
+						}
+						...
+						public void save(Revision revision) {
+							revisionRepository.save(revision);
+						}
+						```
+						--
+						### 1. No mapping
 
 						<ul class="left-align pink no-ticks">
 							<li>&#10004; no hassle to do the mapping</li>
 							<li>&#10004; changes are automatically propagated</li>
-							<li>&#10008; lack of separation - tangling of layers</li>
+							<li>&#10008; lack of separation - layers are tangled</li>
 						</ul>
 						--
-						### 2. Two way mapping<!-- .element class="cyan"-->
+						### 2. Two way mapping
 
-						For each data structure in layer A we use another structure in layer B.
+						![Two way](assets/mapping-two-way-mapping.excalidraw.png)
 
-						Structures can be reused between use cases.
+						<p><mark>Example</mark> JPA based db adapter has different model than core</p><!-- .element: class="subtitle"-->
+
+						```java[]
+						public void archiveRevision(RevisionId id) {
+							var revision = queryRevisionByIdPort.query(id);
+							revision.archive();
+							saveRevisionPort.save(revision);
+						}
+						...
+						public void save(Revision revision) {
+							var revisionRecord = revisionRepository.findById(revision.id());
+							mapper.map(revisionRecord, revision);
+							revisionRepository.save(revisionRecord);
+						}
+						```
+						--
+						### 2. Two way mapping
+
+						Adjacent layers use separate models.
 
 						<ul class="left-align pink no-ticks">
 							<li>&#10004; full separation of layers</li>
@@ -172,9 +206,20 @@
 							<li>&#10008; single change triggers multiple changes in use cases</li>
 						</ul>
 						--
-						### 3. Full mapping<!-- .element class="cyan"-->
+						### 3. Full mapping
+						![Full mapping](assets/mapping-full-mapping.excalidraw.png)
+						<p><mark>Example</mark> Use separate model per use case in changing use cases</p><!-- .element: class="subtitle"-->
 
-						For each usage a separate, dedicated data structure is used.
+						```java[]
+						public void createRevision(CreateRevisionCommand command) {
+							var revision = Revision.create(command.title(), command.content());
+							saveRevisionPort.save(revision);
+						}
+						```
+						--
+						### 3. Full mapping
+
+						For each usage a separate, dedicated model is used.
 
 						<ul class="left-align pink no-ticks">
 							<li>&#10004; full separation of layers</li>
@@ -233,10 +278,6 @@
 						</ul>
 
 						Fits well if data structures across layers are similar but "no mapping" is by some reason not suitable.
-						---
-						### How about public API?
-
-						![Public API Boundary](assets/public-api-boundary.excalidraw.png)
 						---
 						Mapping examples<!-- .element class="r-fit-text"-->
 						--
