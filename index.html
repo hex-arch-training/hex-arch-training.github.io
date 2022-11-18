@@ -33,7 +33,7 @@
 						[Design Stamina Hypotesis, M. Fowler](https://martinfowler.com/bliki/DesignStaminaHypothesis.html)
 						![Design stamina](assets/design-stamina.excalidraw.png)
 						--
-						### Key takeaways:
+						### Key takeaways
 
 						* <mark>Good design</mark> makes code maintainable
 						* Good design does not increase productivity
@@ -61,6 +61,8 @@
 
 						![Hexagonal architecture flow](assets/hexagonal-architecture-flow.excalidraw.png)
 						--
+						what is core? (TBD)
+						--
 						### <mark>Key advantages</mark>
 						#### of Hexagonal Architecture
 
@@ -86,31 +88,18 @@
 
 						![](assets/domain-bounded-context.png)
 						--
-						jeden slajd - dwa zdania o wiązaniu się DDD i Hex
-						--
-						## How hexagonal relates to DDD
+						### Hexagonal Architecture & DDD
 
-						(remove)
+						![Arch types](assets/architecture-types.excalidraw.png)
 
-						* We have architectures: business, technical, infrastructural
-						* Hexagonal architecture is a kind of technical architecture
-						* DDD is a technique used to reveal and establish business architecture
-						* Technical architecture is derived from business architecture
-						--
-						## Example
+						* DDD discovers _business architecture_ elements
+						* Hexagonal Architecture promotes <mark>domain</mark>
 
-						* DDD decomposes domain into subdomain and further into bounded contexts
-						* We use subdomains to identify microservices
-						* We use bounded contexts to identify more microservices and/or modules and components
-						* We model modules/components with hexagonal architecture (technical architecture)
+						![Arch types](assets/architecture-types-2.excalidraw.png)<!-- .element class="fragment"-->
 						---
 						### Live coding 1
 
-						(wewnętrzne punkty / usunąć lub dać do instrukcji)
-
-						1. Checkout branch 00-start
-						2. Implement `QueryRevisionById*`
-						3. Implement tests
+						implementing `QueryRevisionById`
 						--
 						### Summary
 
@@ -119,7 +108,7 @@
 						* subdomeny widoczne w kodzie (1szy poziom)
 						---
 						### Exercise 1
-						Implement `CreateRevisionUseCase` with tests
+						implement `CreateRevision` with tests
 						--
 						### Summary
 
