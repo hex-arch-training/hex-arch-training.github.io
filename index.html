@@ -292,17 +292,22 @@
 						---
 						### Live coding 2
 
-						1. Verification domain
-						2. `shared` module
-						<!-- 3. implement `RequestVerification` (async) -->
+						1. Implementing `RequestVerification`
+						2. Using asynchronous communication between subdomains using <mark>events</mark>
 						--
 						### Summary
 
-						(asynchronous communication intro)
+						![Async](assets/live-coding-async-events.excalidraw.png)
 
-						1. Asynchronous communication
+						1. Inbound web adapter &#10004;
+						2. Outbound event adapter &#10004;
+						3. Outbound persistence adapter &#10004;
+						4. `RequestRevision` Service &#10004;
+						5. `PushRevisionToVerification` Service &#10004;
 						---
-						(synchronous communication p2p intro)
+						Subdomains can talk synchronously as well
+
+						![Sync](assets/exercise-synchronous.excalidraw.png)
 						--
 						### Exercise 2
 
