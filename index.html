@@ -103,19 +103,20 @@
 						--
 						### Summary
 
-						* co zrobiliśmy - porty out/in, adaptery out/in
-						* query model
-						* subdomeny widoczne w kodzie (1szy poziom)
+						* Inbound web adapter using read model &#10004;
+						* Outbound persistence adapter &#10004;
+						* `QueryRevisionById` Service &#10004;
+						* Subdomains visible as first level of directories (<mark>screaming</mark>) &#10004;
 						---
 						### Exercise 1
 						implement `CreateRevision` with tests
 						--
 						### Summary
 
-						1. co zrobiliśmy
-						2. command
-						3. zapis do bazy
-						4. or switch to branch 02 ...
+						1. Inbound web adapter using command pattern &#10004;
+						2. Outbound persistence adapter &#10004;
+						3. `CreateRevision` Service &#10004;
+						4. ... or switch to branch `02-second-usecase-prep`
 						---
 						<!-- .slide: id="mapping"-->
 						Mapping methods<!-- .element class="r-fit-text"-->
@@ -124,7 +125,7 @@
 
 						> Mapping is a function that transforms data from one data structure to another data structure.
 
-						We use <em>mapping</em> to ensure separation between two layers.
+						<em>Mapping</em> is necessary when two layers use separate data models.
 						--
 						Potential mapping points in Hexagonal Architecture
 
@@ -185,8 +186,6 @@
 						--
 						### 2. Two way mapping
 
-						Adjacent layers use separate models.
-
 						<ul class="left-align pink no-ticks">
 							<li>&#10004; full separation of layers</li>
 							<li>&#10008; structures may be still semantically tangled</li>
@@ -207,8 +206,6 @@
 						```
 						--
 						### 3. Full mapping
-
-						For each usage a separate, dedicated model is used.
 
 						<ul class="left-align pink no-ticks">
 							<li>&#10004; full separation of layers</li>
@@ -335,8 +332,6 @@
 						Screaming architecture<!-- .element class="r-fit-text"-->
 
 						or how to organize files using subdirectories<!-- .element: class="pink"-->
-
-						<div><s>Robert C. Martin</s> Maciej Małecki</div><!-- .element class="fragment"-->
 						--
 						> When you look at the top-level directory structure,
 						> and the source files in the highest-level package,
